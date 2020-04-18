@@ -1,0 +1,67 @@
+[
+	{
+        "id": "cogent",
+		"word": "cogent",
+		"meaning": "Reasonable; based on evidence",
+		"synonyms": [
+			"compelling", 
+            "conclusive", 
+            "convincing", 
+            "decisive", 
+            "effective", 
+            "forceful", 
+            "persuasive", 
+            "satisfying", 
+            "strong", 
+            "telling"
+		]
+	},
+    {
+        "id": "egregious",
+		"word": "egregious",
+		"meaning": "Outrageously bad; shocking",
+		"synonyms": [
+			"blatant", "conspicuous", "flagrant", "glaring", "gross", "obvious", "patent", "pronounced", "rank", "striking"
+		]
+	},
+    {
+        "id": "latent",
+		"word": "latent",
+		"meaning": "Remaining in a non-active or hidden phase",
+		"synonyms": [
+			"dead", "dormant", "fallow", "free", "idle", "inactive", "inert", "inoperative", "off", "unused", "vacant"
+		]
+	},
+    {
+        "id": "restive",
+		"word": "restive",
+		"meaning": "Impatient; resistant to control",
+		"synonyms": [
+			 "balky", "contrary", "contumacious", "defiant", "disobedient", "froward", "incompliant", "insubordinate", "intractable", "obstreperous", "rebel", "rebellious", "recalcitrant", "recusant", "refractory", "ungovernable", "unruly", "untoward", "wayward", "willful / wilful"
+		]
+	},
+    {
+        "id": "great",
+		"word": "great",
+		"meaning": "Extreme or more than usual; of significant importance",
+		"synonyms": [
+			 "noteworthy", "worthy", "distinguished", "remarkable", "grand", "considerable", "powerful", "much", "mighty"
+		]
+	},
+    {
+        "id": "lazy",
+		"word": "lazy",
+		"meaning": "Showing a lack of effort or care",
+		"synonyms": [
+			 "indolent", "slothful", "idle", "inactive", "sluggish"
+		]
+	}
+]
+
+
+
+
+
+
+
+

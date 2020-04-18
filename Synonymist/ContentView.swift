@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-   @ObservedObject var words = Words()
+    @State private var words: [Word] = Bundle.main.decode("words.json")
+    @ObservedObject var recentMistakes = Mistakes()
     
     @State private var correctVariant = Int.random(in: 0...3)
-    @State private var score = 0
     @State private var questionNumber = 1
     @State private var showingAlert = false
     @State private var alertTitle = ""
@@ -27,12 +27,12 @@ struct ContentView: View {
     @State private var progress = Array(repeating: Question(), count: numberOfQuestions)
     
     @State private var showingHint = false
-    
     @State private var showingScoreSheet = false
-    @State private var mistakes: [Word] = []
-    @State private var playedGames = 0
-    @State private var wonGames = 0
     @State private var correctQuestionsInGame = 0
+
+    @State private var score = UserDefaults.standard.integer(forKey: "Score")
+    @State private var playedGames = UserDefaults.standard.integer(forKey: "PlayedGames")
+    @State private var wonGames = UserDefaults.standard.integer(forKey: "WonGames")
     
     var body: some View {
         ZStack {
@@ -42,8 +42,6 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
            
             VStack {
-
-                
                 VStack {
                     Text("QUESTION \(self.questionNumber) / 5")
                         .font(.custom("MavenPro-Bold", size: 13))
@@ -62,7 +60,7 @@ struct ContentView: View {
                         .foregroundColor(.ghostWhite)
                     
                     HStack(spacing: 10) {
-                        Text(words.collection[correctVariant].word.uppercased())
+                        Text(words[correctVariant].word.uppercased())
                             .font(.custom("MavenPro-Black", size: 21))
                             .foregroundColor(.ghostWhite)
                             .padding(.leading, 40)
@@ -76,7 +74,7 @@ struct ContentView: View {
                         }
                         .frame(width: 30, height: 30)
                     }
-                    Text(words.collection[correctVariant].meaning)
+                    Text(words[correctVariant].meaning)
                         .font(.custom("MavenPro-SemiBold", size: 13))
                         .foregroundColor(.ghostWhite)
                         .lineLimit(2)
@@ -91,13 +89,12 @@ struct ContentView: View {
                         
                         Button(action: {
                             self.chosenVariant = variant
-                            self.userAnswer = self.checkAnswer(variant: "\(self.words.collection[variant].synonyms[0])")
+                            self.userAnswer = self.checkAnswer(variant: "\(self.words[variant].synonyms[0])")
                             self.changeProgress()
                             self.timer = Timer.publish(every: 0.3, tolerance: 0.5, on: .main, in: .common).autoconnect()
                         }) {
                             if variant == self.chosenVariant {
-                                VariantView(variant: "\(self.words.collection[variant].synonyms[0])", correct: self.userAnswer)
-                            
+                            VariantView(variant: "\(self.words[variant].synonyms[0])", correct: self.userAnswer)
                                     .onReceive(self.timer) { time in
                                         self.timerCounter += 1
                                         if self.timerCounter == 2 {
@@ -106,7 +103,7 @@ struct ContentView: View {
                                     }
                                 }
                             } else {
-                                VariantView(variant: "\(self.words.collection[variant].synonyms[0])", correct: nil)
+                                VariantView(variant: "\(self.words[variant].synonyms[0])", correct: nil)
                             }
                         }
                         .disabled(self.userAnswer != nil)
@@ -136,20 +133,21 @@ struct ContentView: View {
             }
             
             .sheet(isPresented: $showingScoreSheet) {
-                ScoreView(score: self.score, mistakes: self.mistakes, playedGames: self.playedGames, wonGames: self.wonGames)
+                ScoreView(score: self.score, mistakes: self.recentMistakes.mistakes, playedGames: self.playedGames, wonGames: self.wonGames)
             }
         }
     }
     
     func checkAnswer(variant: String) -> Bool {
-        if words.collection[correctVariant].synonyms.contains(variant) {
+        if words[correctVariant].synonyms.contains(variant) {
+
             if score < 9999 {
                 score += 1
             }
             correctQuestionsInGame += 1
             return true
         } else {
-            self.addMistakes()
+            recentMistakes.addMistake(words[correctVariant])
             return false
         }
     }
@@ -161,18 +159,7 @@ struct ContentView: View {
             }
         }
     }
-    
-    func addMistakes() {
-        // 5 last unique mistakes only
-        if mistakes.contains(words.collection[correctVariant]) {
-           return
-        }
-        mistakes.insert(words.collection[correctVariant], at: 0)
-        if mistakes.count > 5 {
-            mistakes.remove(at: 5)
-        }
-    }
-    
+
     func changeProgress() {
         if userAnswer != nil {
             if userAnswer == true {
@@ -213,9 +200,10 @@ struct ContentView: View {
     }
     
     func randomiseWords() {
-        words.collection.shuffle()
-        for word in words.collection {
-            word.self.synonyms.shuffle()
+        words.shuffle()
+
+        for word in words {
+            word.synonyms.shuffle()
         }
         correctVariant = Int.random(in: 0...3)
     }
@@ -223,10 +211,17 @@ struct ContentView: View {
     func restartGame() {
         countWonGames()
         playedGames += 1
+        saveData()
         questionNumber = 1
         correctQuestionsInGame = 0
         progress = Array(repeating: Question(correct: nil), count: Self.numberOfQuestions)
         randomiseWords()
+    }
+    
+    func saveData() {
+        UserDefaults.standard.set(self.score, forKey: "Score")
+        UserDefaults.standard.set(self.playedGames, forKey: "PlayedGames")
+        UserDefaults.standard.set(self.wonGames, forKey: "WonGames")
     }
 }
 
