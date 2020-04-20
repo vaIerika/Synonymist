@@ -1,23 +1,12 @@
 [
 	{
-        "id": "cogent",
 		"word": "cogent",
 		"meaning": "Reasonable; based on evidence",
 		"synonyms": [
-			"compelling", 
-            "conclusive", 
-            "convincing", 
-            "decisive", 
-            "effective", 
-            "forceful", 
-            "persuasive", 
-            "satisfying", 
-            "strong", 
-            "telling"
+			"compelling", "conclusive", "convincing", "decisive", "effective", "forceful", "persuasive", "satisfying", "strong", "telling"
 		]
 	},
     {
-        "id": "egregious",
 		"word": "egregious",
 		"meaning": "Outrageously bad; shocking",
 		"synonyms": [
@@ -25,7 +14,6 @@
 		]
 	},
     {
-        "id": "latent",
 		"word": "latent",
 		"meaning": "Remaining in a non-active or hidden phase",
 		"synonyms": [
@@ -33,7 +21,6 @@
 		]
 	},
     {
-        "id": "restive",
 		"word": "restive",
 		"meaning": "Impatient; resistant to control",
 		"synonyms": [
@@ -41,7 +28,6 @@
 		]
 	},
     {
-        "id": "great",
 		"word": "great",
 		"meaning": "Extreme or more than usual; of significant importance",
 		"synonyms": [
@@ -49,7 +35,150 @@
 		]
 	},
     {
-        "id": "lazy",
+		"word": "indignant",
+		"meaning": "Showing anger or indignation",
+		"synonyms": [
+            "infuriated", "mad", "resentful"
+		]
+	},
+    {
+		"word": "assiduous",
+		"meaning": "Hard-working",
+		"synonyms": [
+            "bustling", "diligent", "employed", "engaged", "hopping", "industrious", "laborious", "occupied", "sedulous", "tied-up"
+		]
+	},
+     {
+		"word": "convivial",
+		"meaning": "Having elements of a feast or of entertainment",
+		"synonyms": [
+            "boon", "clubbable / clubable", "clubby", "companionable", "extroverted / extraverted", "gregarious", "outgoing", "sociable", "social"
+		]
+	},   
+     {
+		"word": "ebullient",
+		"meaning": "Filled with life and enthusiasm",
+		"synonyms": [
+            "Enthusiastic", "high-spirited", "animate", "snappy", "spanking", "boisterous", "bubbly", "exuberant"
+		]
+	}, 
+    {
+		"word": "fastidious",
+		"meaning": "Hard to please",
+		"synonyms": [
+            "choosy", "dainty", "delicate", "demanding", "exacting", "finical", "finicking", "finicky", "fussbudgety", "fussy", "old-maidish", "particular", "pernickety", "persnickety", "picky"
+
+		]
+	}, 
+   {
+		"word": "ponderous",
+		"meaning": "Difficult to use or operate; having great weight",
+		"synonyms": [
+            "awkward", "bunglesome", "clumsy", "clunky", "cranky", "cumbersome", "cumbrous", "ungainly", "unhandy", "unwieldy", "heavy", "hefty", "massive", "weighty"
+
+		]
+	},
+    {
+		"word": "tenuous",
+		"meaning": "Thin in substance or consistency",
+		"synonyms": [
+            "eggshell", "flimsy", "insubstantial", "slight", "unsubstantial", "breakable", "fragile", "frail", "frangible", "doubtful", "dubious", "shady", "shaky", "suspicious"
+
+		]
+	},
+    {
+		"word": "contrite",
+		"meaning": "Feeling regret or sorrow",
+		"synonyms": [
+            "apologetic", "compunctious", "penitent", "regretful", "remorseful", "repentant", "rueful", "sorry"
+
+		]
+	},
+    {
+		"word": "juvenile",
+		"meaning": "Being in the early stage of life, growth, or development",
+		"synonyms": [
+            "adolescent", "immature", "young", "youngish", "youthful"
+		]
+	},    
+    {
+		"word": "austere",
+		"meaning": "Lacking trivial decoration; harsh in manner",
+		"synonyms": [
+            "authoritarian", "flinty", "heavy-handed", "ramrod", "rigid", "rigorous", "severe", "stern", "strict", "tough", "dour", "fierce", "forbidding", "grim", "gruff", "intimidating", "spartan", "stark"
+		]
+	}, 
+    {
+		"word": "monstrous",
+		"meaning": "Badly or imperfectly formed; extremely disturbing",
+		"synonyms": [
+            "deformed", "distorted", "malformed", "misshapen", "shapeless", "appalling", "atrocious", "awful", "dreadful", "frightful", "ghastly", "grisly", "monumental", "oceanic", "pharaonic", "grotesque", "hideous", "homely", "ill-favored", "ugly", "unappealing", "unattractive", "uncomely", "unhandsome", "unsightly", "vile"
+		]
+	}, 
+    {
+		"word": "obstinate",
+		"meaning": "Sticking to an opinion",
+		"synonyms": [
+           "adamant", "adamantine", "bullheaded", "dogged", "hardened", "hardheaded", "hard-nosed", "headstrong", "immovable", "implacable", "inconvincible", "inflexible", "intransigent", "mulish", "obdurate", "opinionated", "ossified", "pat", "pertinacious", "perverse", "pigheaded", "self-opinionated", "self-willed", "stiff-necked", "stubborn", "unbending", "uncompromising", "unrelenting"
+		]
+	}, 
+    {
+		"word": "superfluous",
+		"meaning": "Being over what is needed",
+		"synonyms": [
+           "excess", "extra", "redundant", "spare", "supererogatory", "supernumerary", "surplus"
+		]
+	}, 
+    {
+		"word": "ephemeral",
+		"meaning": "Lasting only for a short time",
+		"synonyms": [
+           "brief", "deciduous", "evanescent", "flash", "fleeting", "fugacious", "fugitive", "impermanent", "momentary", "passing", "short-lived", "temporary", "transient", "transitory"
+		]
+	},
+    {
+		"word": "depraved",
+		"meaning": "Having or showing lowered moral character or standards",
+		"synonyms": [
+            "corrupt", "debased", "debauched", "decadent", "degenerate", "degraded", "demoralized", "dissipated", "dissolute", "jackleg", "libertine", "loose", "perverse", "perverted", "rakish", "reprobate", "sick", "unclean", "unwholesome", "warped"
+		]
+	},
+    {
+		"word": "grievous",
+		"meaning": "Difficult to endure",
+		"synonyms": [
+            "afflicting", "agonizing", "bitter", "cruel", "excruciating", "galling", "harrowing", "harsh", "heartrending", "hurtful", "painful", "tormenting", "torturous", "brutal", "burdensome", "grim", "hardhanded", "inhuman", "murderous", "onerous", "oppressive", "rough", "rugged", "searing", "severe", "stiff", "tough"
+		]
+	}, 
+    {
+		"word": "mottled",
+		"meaning": "Colored in patches",
+		"synonyms": [
+            "spotted", "dappled"
+		]
+	}, 
+    {
+		"word": "nefarious",
+		"meaning": "Criminal",
+		"synonyms": [
+            "dark", "evil", "immoral", "iniquitous", "rotten", "sinful", "unethical", "unlawful", "unrighteous", "unsavory", "vicious", "vile", "villainous", "wicked", "wrong"
+		]
+	}, 
+    {
+		"word": "pure",
+		"meaning": "Unmixed with any other matter",
+		"synonyms": [
+            "absolute", "neat", "plain", "purified", "refined", "straight", "unadulterated", "unalloyed", "undiluted"
+		]
+	}, 
+    {
+		"word": "concerned",
+		"meaning": "Showing concern",
+		"synonyms": [
+           "involved", "responsible", "anxious", "worried", "implicated"
+		]
+	}, 
+    {
 		"word": "lazy",
 		"meaning": "Showing a lack of effort or care",
 		"synonyms": [
@@ -57,11 +186,3 @@
 		]
 	}
 ]
-
-
-
-
-
-
-
-

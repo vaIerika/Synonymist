@@ -172,14 +172,14 @@ struct ScoreView: View {
     }
 }
 
-//struct ScoreView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ScoreView(score: 108, mistakes: [
-//            Word(word: "significant", meaning: "", synonyms: []),
-//            Word(word: "outstanding", meaning: "", synonyms: []),
-//            Word(word: "egregious", meaning: "", synonyms: []),
-//            Word(word: "shamefaced", meaning: "", synonyms: []),
-//            Word(word: "sharp-tempered", meaning: "", synonyms: []),
-//        ], playedGames: 100, wonGames: 0)
-//    }
-//}
+struct ScoreView_Previews: PreviewProvider {
+    static var previews: some View {
+        ScoreView(score: 108, mistakes: [
+            Word(word: "significant", meaning: "", synonyms: []),
+            Word(word: "outstanding", meaning: "", synonyms: []),
+            Word(word: "egregious", meaning: "", synonyms: []),
+            Word(word: "shamefaced", meaning: "", synonyms: []),
+            Word(word: "sharp-tempered", meaning: "", synonyms: []),
+        ], playedGames: 100, wonGames: 0)
+    }
+}

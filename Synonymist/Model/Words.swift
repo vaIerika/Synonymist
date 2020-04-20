@@ -8,15 +8,13 @@
 import Foundation
 import SwiftUI
 
-class Word: Identifiable, Codable, Equatable {
+class Word: Codable, Equatable {
 
-    var id: String
     var word: String
     var meaning: String
     var synonyms: [String]
     
-    init(id: String, word: String, meaning: String, synonyms: [String]) {
-        self.id = id
+    init(word: String, meaning: String, synonyms: [String]) {
         self.word = word
         self.meaning = meaning
         self.synonyms = synonyms

@@ -145,11 +145,23 @@ struct ContentView: View {
                 score += 1
             }
             correctQuestionsInGame += 1
+            hapticsSuccess()
             return true
         } else {
             recentMistakes.addMistake(words[correctVariant])
+            hapticsError()
             return false
         }
+    }
+    
+    func hapticsSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
+    func hapticsError() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
     }
     
     func countWonGames() {

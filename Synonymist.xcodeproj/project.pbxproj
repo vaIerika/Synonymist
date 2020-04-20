@@ -11,7 +11,6 @@
 		AF0D2C942448D3C1009913AB /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* Badge.swift */; };
 		AF0D2C962448D42E009913AB /* VariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C952448D42E009913AB /* VariantView.swift */; };
 		AF21019D244B2C67004C0780 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21019C244B2C67004C0780 /* BundleExtension.swift */; };
-		AF21019F244B3674004C0780 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = AF21019E244B3674004C0780 /* words.json */; };
 		AF2101A1244B4ED5004C0780 /* Mistakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2101A0244B4ED5004C0780 /* Mistakes.swift */; };
 		AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */; };
 		AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */; };
@@ -24,6 +23,7 @@
 		AF64AB3B2447303F002A48AD /* MavenPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF64AB3724473020002A48AD /* MavenPro-SemiBold.ttf */; };
 		AF64AB3F24473513002A48AD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB3E24473513002A48AD /* ColorExtension.swift */; };
 		AF64AB4124477073002A48AD /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB4024477073002A48AD /* ScoreView.swift */; };
+		AF68E393244CA9E700E27A10 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = AF68E392244CA9E700E27A10 /* words.json */; };
 		AFD06C182445E42D00CA17A8 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD06C172445E42D00CA17A8 /* Words.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,6 @@
 		AF0D2C932448D3C1009913AB /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		AF0D2C952448D42E009913AB /* VariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantView.swift; sourceTree = "<group>"; };
 		AF21019C244B2C67004C0780 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
-		AF21019E244B3674004C0780 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		AF2101A0244B4ED5004C0780 /* Mistakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistakes.swift; sourceTree = "<group>"; };
 		AF40AC29244361CA00CE2B47 /* Synonymist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synonymist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		AF64AB3824473020002A48AD /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Bold.ttf"; sourceTree = "<group>"; };
 		AF64AB3E24473513002A48AD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		AF64AB4024477073002A48AD /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		AF68E392244CA9E700E27A10 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		AFD06C172445E42D00CA17A8 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +138,7 @@
 			children = (
 				AF2101A0244B4ED5004C0780 /* Mistakes.swift */,
 				AFD06C172445E42D00CA17A8 /* Words.swift */,
-				AF21019E244B3674004C0780 /* words.json */,
+				AF68E392244CA9E700E27A10 /* words.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 				AF64AB3B2447303F002A48AD /* MavenPro-SemiBold.ttf in Resources */,
 				AF40AC33244361CE00CE2B47 /* Assets.xcassets in Resources */,
 				AF64AB3924473039002A48AD /* MavenPro-Bold.ttf in Resources */,
-				AF21019F244B3674004C0780 /* words.json in Resources */,
+				AF68E393244CA9E700E27A10 /* words.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
