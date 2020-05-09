@@ -85,7 +85,6 @@
 				AF64AB3D244734FE002A48AD /* Extensions */,
 				AFD06C162445E40C00CA17A8 /* Model */,
 				AF899FD82444D22900495D68 /* View */,
-				AF40AC30244361CA00CE2B47 /* ContentView.swift */,
 				AF40AC32244361CE00CE2B47 /* Assets.xcassets */,
 				AF40AC37244361CE00CE2B47 /* LaunchScreen.storyboard */,
 				AF40AC3A244361CE00CE2B47 /* Info.plist */,
@@ -129,6 +128,7 @@
 				AF64AB4024477073002A48AD /* ScoreView.swift */,
 				AF0D2C912448D371009913AB /* Question.swift */,
 				AF0D2C932448D3C1009913AB /* Badge.swift */,
+				AF40AC30244361CA00CE2B47 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
