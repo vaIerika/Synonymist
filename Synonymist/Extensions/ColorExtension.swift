@@ -16,3 +16,25 @@ extension Color {
     static let powderBlue = Color(red: 173/255, green: 216/255, blue: 230/255)
     static let ghostWhite = Color(red: 230/255, green: 230/255, blue: 250/255)
 }
+
+struct ColorExtension_Previews: PreviewProvider {
+    static var previews: some View {
+        HStack {
+            Circle()
+                .foregroundColor(.brightBlue)
+            Circle()
+                .foregroundColor(.violet)
+            Circle()
+                .foregroundColor(.darkViolet)
+            Circle()
+                .foregroundColor(.turquoise)
+            Circle()
+                .foregroundColor(.powderBlue)
+            Circle()
+                .foregroundColor(.ghostWhite)
+        }
+        .frame(height: 50)
+        .padding(.horizontal, 50)
+        .previewLayout(.fixed(width: 500, height: 140))
+    }
+}

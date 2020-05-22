@@ -83,8 +83,8 @@
 				AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */,
 				AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */,
 				AF64AB3D244734FE002A48AD /* Extensions */,
-				AFD06C162445E40C00CA17A8 /* Model */,
 				AF899FD82444D22900495D68 /* View */,
+				AFD06C162445E40C00CA17A8 /* Model */,
 				AF40AC32244361CE00CE2B47 /* Assets.xcassets */,
 				AF40AC37244361CE00CE2B47 /* LaunchScreen.storyboard */,
 				AF40AC3A244361CE00CE2B47 /* Info.plist */,
@@ -121,14 +121,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AF899FD82444D22900495D68 /* View */ = {
+		AF76237024780BA1006FC29D /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				AF0D2C952448D42E009913AB /* VariantView.swift */,
-				AF64AB4024477073002A48AD /* ScoreView.swift */,
 				AF0D2C912448D371009913AB /* Question.swift */,
 				AF0D2C932448D3C1009913AB /* Badge.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		AF899FD82444D22900495D68 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				AF40AC30244361CA00CE2B47 /* ContentView.swift */,
+				AF64AB4024477073002A48AD /* ScoreView.swift */,
+				AF76237024780BA1006FC29D /* Elements */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.Synonymist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -395,7 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.Synonymist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

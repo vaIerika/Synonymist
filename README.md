@@ -1,7 +1,7 @@
 # Synonymist   <img src="Screenshots/appIcon.png" width="40px" />
 > Application to improve vocabulary of English words. Intended for users with Intermediate level. Database contains about 100 words. 
 >
-> Written in SwiftUI.
+> Written in SwiftUI. Tested with iPhone 11.
 
 <br/>
 
@@ -18,12 +18,14 @@
 
 *Main View of the Game*
 
-![Game View](Screenshots/gameView.gif)
+![Game mode](Screenshots/gameMode.gif)
+
 <br/>
 
 *User's results of the game*
 
-![Score View](Screenshots/scoreView.gif)
+![Score view](Screenshots/score.gif)
+
 <br/>
 
 ### Features 
@@ -40,6 +42,6 @@ If you found a bug or want to discuss a new feature, feel free to [reach out](ma
 
 ### Credits
 
-I highly recommend [Merriam-Webster](https://www.merriam-webster.com). The dictionary has up-to-date words, explanations, and etymologies. Also on the website you can find games, common mistakes and examples. Sometimes I like to spend time just browsing 😄 Merriam-Webster website allows to display, reproduce, print or download their content for personal, non-commercial use.
+I highly recommend [Merriam-Webster](https://www.merriam-webster.com). The dictionary has up-to-date words, explanations, and etymologies. Sometimes I like to spend time just browsing 😄 
 
 Also I have used information from [Wiktionary](https://en.wiktionary.org/wiki). An internet resource that is treated with special favor by a lot of people including me. It allows users to [share, reuse, edit and etc.](https://foundation.wikimedia.org/wiki/Terms_of_Use/en) articles.
