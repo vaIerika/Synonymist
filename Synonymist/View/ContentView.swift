@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var words: [Word] = Bundle.main.decode("words.json")
-    @ObservedObject var recentMistakes = Mistakes()
+   // @State private var words: [Word] = Bundle.main.decode("words.json")
+    private let words = Database().words
+   // @ObservedObject var recentMistakes = Mistakes()
+    @ObservedObject var userStatus = UserStatus()
     
     @State private var correctVariant = Int.random(in: 0...3)
     @State private var questionNumber = 1
@@ -30,9 +32,9 @@ struct ContentView: View {
     @State private var showingScoreSheet = false
     @State private var correctQuestionsInGame = 0
 
-    @State private var score = UserDefaults.standard.integer(forKey: "Score")
-    @State private var playedGames = UserDefaults.standard.integer(forKey: "PlayedGames")
-    @State private var wonGames = UserDefaults.standard.integer(forKey: "WonGames")
+  //  @State private var score = UserDefaults.standard.integer(forKey: "Score")
+   // @State private var playedGames = UserDefaults.standard.integer(forKey: "PlayedGames")
+    //@State private var wonGames = UserDefaults.standard.integer(forKey: "WonGames")
     
     var body: some View {
         ZStack {
@@ -118,7 +120,7 @@ struct ContentView: View {
                     HStack(spacing: 10) {
                         Image(systemName: "paperplane.fill")
                             .foregroundColor(.turquoise)
-                        Text("SCORE: \(score)")
+                        Text("SCORE: \(userStatus.score)")
                             .font(.custom("MavenPro-Bold", size: 13))
                     }
                     .foregroundColor(.ghostWhite)
@@ -133,7 +135,7 @@ struct ContentView: View {
             }
             
             .sheet(isPresented: $showingScoreSheet) {
-                ScoreView(score: self.score, mistakes: self.recentMistakes.mistakes, playedGames: self.playedGames, wonGames: self.wonGames)
+                ScoreView(score: userStatus.score, mistakes: userStatus.recentMistakes, playedGames: userStatus.numPlayedRounds, wonGames: userStatus.numWonRounds)
             }
         }
     }
@@ -141,14 +143,14 @@ struct ContentView: View {
     func checkAnswer(variant: String) -> Bool {
         if words[correctVariant].synonyms.contains(variant) {
 
-            if score < 9999 {
-                score += 1
+            if userStatus.score < 9999 {
+                userStatus.score += 1
             }
             correctQuestionsInGame += 1
             hapticsSuccess()
             return true
         } else {
-            recentMistakes.addMistake(words[correctVariant])
+            userStatus.addMistake(words[correctVariant])
             hapticsError()
             return false
         }
@@ -166,8 +168,8 @@ struct ContentView: View {
     
     func countWonGames() {
         if correctQuestionsInGame == Self.numberOfQuestions {
-            if wonGames < 51 {
-                wonGames += 1
+            if userStatus.numWonRounds < 51 {
+                userStatus.numWonRounds += 1
             }
         }
     }
@@ -212,28 +214,21 @@ struct ContentView: View {
     }
     
     func randomiseWords() {
-        words.shuffle()
+ //       words.shuffle()
 
         for word in words {
-            word.synonyms.shuffle()
+   //         word.synonyms.shuffle()
         }
         correctVariant = Int.random(in: 0...3)
     }
     
     func restartGame() {
         countWonGames()
-        playedGames += 1
-        saveData()
+        userStatus.numPlayedRounds += 1
         questionNumber = 1
         correctQuestionsInGame = 0
         progress = Array(repeating: Question(correct: nil), count: Self.numberOfQuestions)
         randomiseWords()
-    }
-    
-    func saveData() {
-        UserDefaults.standard.set(self.score, forKey: "Score")
-        UserDefaults.standard.set(self.playedGames, forKey: "PlayedGames")
-        UserDefaults.standard.set(self.wonGames, forKey: "WonGames")
     }
 }
 

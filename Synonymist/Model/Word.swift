@@ -1,26 +1,24 @@
 //
-//  Words.swift
+//  Word.swift
 //  Synonymist
 //
 //  Created by Valerie 👩🏼‍💻 on 14/04/2020.
 //
 
 import Foundation
-import SwiftUI
 
-class Word: Codable, Equatable {
-
+struct Word: Codable {
     var word: String
     var meaning: String
     var synonyms: [String]
-    
-    init(word: String, meaning: String, synonyms: [String]) {
-        self.word = word
-        self.meaning = meaning
-        self.synonyms = synonyms
-    }
-    
+}
+
+extension Word: Equatable {
     static func == (lhs: Word, rhs: Word) -> Bool {
         return lhs.word == rhs.word
     }
+}
+
+class Database {
+    let words: [Word] = Bundle.main.decode("words.json")
 }

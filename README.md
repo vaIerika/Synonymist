@@ -1,7 +1,7 @@
 # Synonymist   <img src="Screenshots/appIcon.png" width="40px" />
 > Application to improve vocabulary of English words. Intended for users with Intermediate level. Database contains about 100 words. 
 >
-> Written in SwiftUI. Tested with iPhone 11.
+> Written in SwiftUI.
 
 <br/>
 
@@ -42,6 +42,4 @@ If you found a bug or want to discuss a new feature, feel free to [reach out](ma
 
 ### Credits
 
-I highly recommend [Merriam-Webster](https://www.merriam-webster.com). The dictionary has up-to-date words, explanations, and etymologies. Sometimes I like to spend time just browsing 😄 
-
-Also I have used information from [Wiktionary](https://en.wiktionary.org/wiki). An internet resource that is treated with special favor by a lot of people including me. It allows users to [share, reuse, edit and etc.](https://foundation.wikimedia.org/wiki/Terms_of_Use/en) articles.
+Some synonyms and definitions were taken from the [Merriam-Webster](https://www.merriam-webster.com) online dictionary, and the [Wiktionary](https://en.wiktionary.org/wiki) website.

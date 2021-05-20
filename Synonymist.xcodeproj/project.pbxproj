@@ -11,7 +11,6 @@
 		AF0D2C942448D3C1009913AB /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* Badge.swift */; };
 		AF0D2C962448D42E009913AB /* VariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C952448D42E009913AB /* VariantView.swift */; };
 		AF21019D244B2C67004C0780 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21019C244B2C67004C0780 /* BundleExtension.swift */; };
-		AF2101A1244B4ED5004C0780 /* Mistakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2101A0244B4ED5004C0780 /* Mistakes.swift */; };
 		AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */; };
 		AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */; };
 		AF40AC31244361CA00CE2B47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC30244361CA00CE2B47 /* ContentView.swift */; };
@@ -24,7 +23,8 @@
 		AF64AB3F24473513002A48AD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB3E24473513002A48AD /* ColorExtension.swift */; };
 		AF64AB4124477073002A48AD /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB4024477073002A48AD /* ScoreView.swift */; };
 		AF68E393244CA9E700E27A10 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = AF68E392244CA9E700E27A10 /* words.json */; };
-		AFD06C182445E42D00CA17A8 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD06C172445E42D00CA17A8 /* Words.swift */; };
+		AFD06C182445E42D00CA17A8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD06C172445E42D00CA17A8 /* Word.swift */; };
+		B8398C392656BA970020A267 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8398C382656BA970020A267 /* UserStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		AF0D2C932448D3C1009913AB /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		AF0D2C952448D42E009913AB /* VariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantView.swift; sourceTree = "<group>"; };
 		AF21019C244B2C67004C0780 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
-		AF2101A0244B4ED5004C0780 /* Mistakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistakes.swift; sourceTree = "<group>"; };
 		AF40AC29244361CA00CE2B47 /* Synonymist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synonymist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +46,8 @@
 		AF64AB3E24473513002A48AD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		AF64AB4024477073002A48AD /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		AF68E392244CA9E700E27A10 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
-		AFD06C172445E42D00CA17A8 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		AFD06C172445E42D00CA17A8 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		B8398C382656BA970020A267 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +82,10 @@
 			children = (
 				AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */,
 				AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */,
-				AF64AB3D244734FE002A48AD /* Extensions */,
-				AF899FD82444D22900495D68 /* View */,
+				B8398C372656BA890020A267 /* ViewModel */,
 				AFD06C162445E40C00CA17A8 /* Model */,
+				AF899FD82444D22900495D68 /* View */,
+				AF64AB3D244734FE002A48AD /* Extensions */,
 				AF40AC32244361CE00CE2B47 /* Assets.xcassets */,
 				AF40AC37244361CE00CE2B47 /* LaunchScreen.storyboard */,
 				AF40AC3A244361CE00CE2B47 /* Info.plist */,
@@ -144,11 +145,18 @@
 		AFD06C162445E40C00CA17A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF2101A0244B4ED5004C0780 /* Mistakes.swift */,
-				AFD06C172445E42D00CA17A8 /* Words.swift */,
+				AFD06C172445E42D00CA17A8 /* Word.swift */,
 				AF68E392244CA9E700E27A10 /* words.json */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B8398C372656BA890020A267 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8398C382656BA970020A267 /* UserStatus.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +186,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					AF40AC28244361CA00CE2B47 = {
 						CreatedOnToolsVersion = 11.4;
@@ -227,14 +235,14 @@
 			files = (
 				AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */,
 				AF0D2C942448D3C1009913AB /* Badge.swift in Sources */,
-				AF2101A1244B4ED5004C0780 /* Mistakes.swift in Sources */,
 				AF0D2C962448D42E009913AB /* VariantView.swift in Sources */,
-				AFD06C182445E42D00CA17A8 /* Words.swift in Sources */,
+				AFD06C182445E42D00CA17A8 /* Word.swift in Sources */,
 				AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */,
 				AF21019D244B2C67004C0780 /* BundleExtension.swift in Sources */,
 				AF40AC31244361CA00CE2B47 /* ContentView.swift in Sources */,
 				AF64AB3F24473513002A48AD /* ColorExtension.swift in Sources */,
 				AF0D2C922448D371009913AB /* Question.swift in Sources */,
+				B8398C392656BA970020A267 /* UserStatus.swift in Sources */,
 				AF64AB4124477073002A48AD /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +287,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -339,6 +348,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -373,7 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Synonymist/Preview Content\"";
-				DEVELOPMENT_TEAM = YA4J44RAZS;
+				DEVELOPMENT_TEAM = 2DY52YYPUP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Synonymist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -393,7 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Synonymist/Preview Content\"";
-				DEVELOPMENT_TEAM = YA4J44RAZS;
+				DEVELOPMENT_TEAM = 2DY52YYPUP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Synonymist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
