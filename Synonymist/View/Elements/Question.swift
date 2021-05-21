@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+struct QuestionsView: View {
+    static let numberOfQuestions = 5
+    @State private var questionNumber = 1
+
+    @State private var progress = Array(repeating: Question(), count: numberOfQuestions)
+
+    var body: some View {
+        Group {
+        Text("QUESTION \(questionNumber) / 5")
+            .fontMavenPro(.footnote)
+        
+        HStack {
+            ForEach(0..<progress.count, id: \.self) { i in
+                self.progress[i]
+            }
+        }
+        .padding(.top, 8)
+        .padding(.bottom, 30)
+        }
+    }
+}
+
+
 struct Question: View {
     var correct: Bool?
     

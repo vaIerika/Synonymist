@@ -1,5 +1,5 @@
 //
-//  ColorExtension.swift
+//  GameColors..swift
 //  Synonymist
 //
 //  Created by Valerie 👩🏼‍💻 on 15/04/2020.
@@ -17,7 +17,7 @@ extension Color {
     static let ghostWhite = Color(red: 230/255, green: 230/255, blue: 250/255)
 }
 
-struct ColorExtension_Previews: PreviewProvider {
+struct GameColors_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
             Circle()

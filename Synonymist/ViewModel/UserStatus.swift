@@ -13,10 +13,10 @@ class UserStatus: ObservableObject, Codable {
     @Published var numWonRounds: Int
     @Published var recentMistakes: [Word]
     
-    func finishRound(victory: Bool, earnings: Int, mistakes: Word...) {
+    func finishRound(isVictory: Bool, earnings: Int, mistakes: Word...) {
         increase(.score, amount: earnings)
         increase(.numPlayedRounds)
-        if victory { increase(.numWonRounds) }
+        if isVictory { increase(.numWonRounds) }
         
         for mistake in mistakes {
             addMistake(mistake)

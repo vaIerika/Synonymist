@@ -1,5 +1,5 @@
 //
-//  BundleExtension.swift
+//  Bundle+Decodable.swift
 //  Synonymist
 //
 //  Created by Valerie 👩🏼‍💻 on 18/04/2020.

@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-   // @State private var words: [Word] = Bundle.main.decode("words.json")
-    private let words = Database().words
-   // @ObservedObject var recentMistakes = Mistakes()
     @ObservedObject var userStatus = UserStatus()
-    
+    private let words = Game().getWordsForRound()
+
     @State private var correctVariant = Int.random(in: 0...3)
     @State private var questionNumber = 1
     @State private var showingAlert = false
@@ -32,10 +30,6 @@ struct ContentView: View {
     @State private var showingScoreSheet = false
     @State private var correctQuestionsInGame = 0
 
-  //  @State private var score = UserDefaults.standard.integer(forKey: "Score")
-   // @State private var playedGames = UserDefaults.standard.integer(forKey: "PlayedGames")
-    //@State private var wonGames = UserDefaults.standard.integer(forKey: "WonGames")
-    
     var body: some View {
         ZStack {
             Image("background")
@@ -45,9 +39,7 @@ struct ContentView: View {
            
             VStack {
                 VStack {
-                    Text("QUESTION \(self.questionNumber) / 5")
-                        .font(.custom("MavenPro-Bold", size: 13))
-                        .foregroundColor(.ghostWhite)
+                    Text("QUESTION \(self.questionNumber) / 5").fontMavenPro(.footnote)
                     
                     HStack {
                         ForEach(0..<progress.count, id: \.self) { i in
@@ -58,13 +50,11 @@ struct ContentView: View {
                     .padding(.bottom, 30)
                     
                     Text("Find a synonym for")
-                        .font(.custom("MavenPro-Bold", size: 17))
-                        .foregroundColor(.ghostWhite)
+                        .fontMavenPro()
                     
                     HStack(spacing: 10) {
                         Text(words[correctVariant].word.uppercased())
-                            .font(.custom("MavenPro-Black", size: 21))
-                            .foregroundColor(.ghostWhite)
+                            .fontMavenPro(.title3, weight: .black)
                             .padding(.leading, 40)
                             
                         Button(action: {
@@ -77,8 +67,7 @@ struct ContentView: View {
                         .frame(width: 30, height: 30)
                     }
                     Text(words[correctVariant].meaning)
-                        .font(.custom("MavenPro-SemiBold", size: 13))
-                        .foregroundColor(.ghostWhite)
+                        .fontMavenPro(.footnote, weight: .semiBold)
                         .lineLimit(2)
                         .padding(.horizontal)
                         .opacity(self.showingHint ? 1 : 0)
@@ -121,7 +110,7 @@ struct ContentView: View {
                         Image(systemName: "paperplane.fill")
                             .foregroundColor(.turquoise)
                         Text("SCORE: \(userStatus.score)")
-                            .font(.custom("MavenPro-Bold", size: 13))
+                            .fontMavenPro(.footnote)
                     }
                     .foregroundColor(.ghostWhite)
                     .padding(.bottom, 70)
@@ -150,7 +139,7 @@ struct ContentView: View {
             hapticsSuccess()
             return true
         } else {
-            userStatus.addMistake(words[correctVariant])
+            //userStatus.addMistake(words[correctVariant])
             hapticsError()
             return false
         }

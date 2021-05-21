@@ -10,7 +10,7 @@
 		AF0D2C922448D371009913AB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C912448D371009913AB /* Question.swift */; };
 		AF0D2C942448D3C1009913AB /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* Badge.swift */; };
 		AF0D2C962448D42E009913AB /* VariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C952448D42E009913AB /* VariantView.swift */; };
-		AF21019D244B2C67004C0780 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21019C244B2C67004C0780 /* BundleExtension.swift */; };
+		AF21019D244B2C67004C0780 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */; };
 		AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */; };
 		AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */; };
 		AF40AC31244361CA00CE2B47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC30244361CA00CE2B47 /* ContentView.swift */; };
@@ -20,18 +20,19 @@
 		AF64AB3924473039002A48AD /* MavenPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF64AB3824473020002A48AD /* MavenPro-Bold.ttf */; };
 		AF64AB3A2447303B002A48AD /* MavenPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF64AB3624473020002A48AD /* MavenPro-Black.ttf */; };
 		AF64AB3B2447303F002A48AD /* MavenPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF64AB3724473020002A48AD /* MavenPro-SemiBold.ttf */; };
-		AF64AB3F24473513002A48AD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB3E24473513002A48AD /* ColorExtension.swift */; };
+		AF64AB3F24473513002A48AD /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB3E24473513002A48AD /* GameColors.swift */; };
 		AF64AB4124477073002A48AD /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AB4024477073002A48AD /* ScoreView.swift */; };
 		AF68E393244CA9E700E27A10 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = AF68E392244CA9E700E27A10 /* words.json */; };
 		AFD06C182445E42D00CA17A8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD06C172445E42D00CA17A8 /* Word.swift */; };
 		B8398C392656BA970020A267 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8398C382656BA970020A267 /* UserStatus.swift */; };
+		B8B7FE772657D2DC00FB1839 /* Font+MavenPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF0D2C912448D371009913AB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AF0D2C932448D3C1009913AB /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		AF0D2C952448D42E009913AB /* VariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantView.swift; sourceTree = "<group>"; };
-		AF21019C244B2C67004C0780 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AF40AC29244361CA00CE2B47 /* Synonymist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synonymist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,11 +44,12 @@
 		AF64AB3624473020002A48AD /* MavenPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Black.ttf"; sourceTree = "<group>"; };
 		AF64AB3724473020002A48AD /* MavenPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		AF64AB3824473020002A48AD /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Bold.ttf"; sourceTree = "<group>"; };
-		AF64AB3E24473513002A48AD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		AF64AB3E24473513002A48AD /* GameColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColors.swift; sourceTree = "<group>"; };
 		AF64AB4024477073002A48AD /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		AF68E392244CA9E700E27A10 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		AFD06C172445E42D00CA17A8 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		B8398C382656BA970020A267 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+MavenPro.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +118,9 @@
 		AF64AB3D244734FE002A48AD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AF21019C244B2C67004C0780 /* BundleExtension.swift */,
-				AF64AB3E24473513002A48AD /* ColorExtension.swift */,
+				B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */,
+				AF64AB3E24473513002A48AD /* GameColors.swift */,
+				AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,9 +128,9 @@
 		AF76237024780BA1006FC29D /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				AF0D2C952448D42E009913AB /* VariantView.swift */,
 				AF0D2C912448D371009913AB /* Question.swift */,
 				AF0D2C932448D3C1009913AB /* Badge.swift */,
+				AF0D2C952448D42E009913AB /* VariantView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -238,9 +241,10 @@
 				AF0D2C962448D42E009913AB /* VariantView.swift in Sources */,
 				AFD06C182445E42D00CA17A8 /* Word.swift in Sources */,
 				AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */,
-				AF21019D244B2C67004C0780 /* BundleExtension.swift in Sources */,
+				AF21019D244B2C67004C0780 /* Bundle+Decodable.swift in Sources */,
 				AF40AC31244361CA00CE2B47 /* ContentView.swift in Sources */,
-				AF64AB3F24473513002A48AD /* ColorExtension.swift in Sources */,
+				AF64AB3F24473513002A48AD /* GameColors.swift in Sources */,
+				B8B7FE772657D2DC00FB1839 /* Font+MavenPro.swift in Sources */,
 				AF0D2C922448D371009913AB /* Question.swift in Sources */,
 				B8398C392656BA970020A267 /* UserStatus.swift in Sources */,
 				AF64AB4124477073002A48AD /* ScoreView.swift in Sources */,
