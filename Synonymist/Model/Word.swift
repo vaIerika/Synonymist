@@ -18,14 +18,3 @@ extension Word: Equatable {
         return lhs.word == rhs.word
     }
 }
-
-class Game {
-    let words: [Word] = Bundle.main.decode("words.json")
-    static let numWordsInRound = 5
-    
-    func getWordsForRound(amount: Int = numWordsInRound) -> [Word] {
-        //var wordsToPlay: [Word] = Array(words.shuffled().dropFirst(amount))
-
-        return Array(words.shuffled().dropFirst(amount))
-    }
-}

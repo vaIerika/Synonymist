@@ -30,7 +30,7 @@ struct QuestionsView: View {
 }
 
 
-struct Question: View {
+struct Question: View, Hashable {
     var correct: Bool?
     
      var body: some View {

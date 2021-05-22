@@ -1,5 +1,5 @@
 //
-//  ScoreView.swift
+//  UserStatusView.swift
 //  Synonymist
 //
 //  Created by Valerie 👩🏼‍💻 on 15/04/2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScoreView: View {
+struct UserStatusView: View {
     @State private var badgeTitle = ""
     @State private var badgeDescription = ""
     @State private var showingBadgeDescription = false
@@ -172,9 +172,9 @@ struct ScoreView: View {
     }
 }
 
-struct ScoreView_Previews: PreviewProvider {
+struct UserStatusView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView(score: 108, mistakes: [
+        UserStatusView(score: 108, mistakes: [
             Word(word: "significant", meaning: "", synonyms: []),
             Word(word: "outstanding", meaning: "", synonyms: []),
             Word(word: "egregious", meaning: "", synonyms: []),
