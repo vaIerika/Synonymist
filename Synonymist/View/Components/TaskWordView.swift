@@ -37,6 +37,9 @@ struct TaskWordView: View {
                 .opacity(showHint ? 1 : 0)
         }
         .padding(.horizontal)
+        .onChange(of: taskWord) { _ in
+            showHint = false 
+        }
     }
 }
 

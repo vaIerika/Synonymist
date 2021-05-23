@@ -8,9 +8,10 @@
 import Foundation
 
 class Game {
-    private let words: [Word] = Bundle.main.decode("words.json")
+    //private(set)
+    let words: [Word] = Bundle.main.decode("words.json")
 
-    func getWordsForRound(amount: Int = numWordsInRound) -> [Word] {
+    func getWordsForRound(amount: Int = numTasksInRound) -> [Word] {
         guard amount > 0 else { return [] }
         return Array(words.shuffled().prefix(amount))
     }
@@ -22,19 +23,20 @@ class Game {
         }
         
         var synonyms = [taskWord.synonyms.shuffled()[0]]
+        print("Taskword: \(taskWord.word). Correct synonym: \(synonyms)")
         let wordsToGetSynonymsFrom = words.shuffled().filter { $0 != taskWord }.prefix(amount - 1)
         
         for word in wordsToGetSynonymsFrom {
-            synonyms.append(word.synonyms.randomElement() ?? "Default")
+            synonyms.append(word.synonyms.filter { !synonyms.contains($0) }.randomElement() ?? "Default")
         }
-        
+        print("All: \(synonyms)")
         return synonyms.shuffled()
     }
     
-    func getAlertTexts(answeredCorrect: Int, total numTotalWordsInRound: Int = Game.numWordsInRound) -> (title: String, message: String) {
-        let earnedPoints = answeredCorrect * Game.pointsPerCorrectAnswer
+    func getAlertTexts(numCorrect: Int, total numTotalWordsInRound: Int = Game.numTasksInRound) -> (title: String, message: String) {
+        let earnedPoints = numCorrect * Game.pointsPerCorrectAnswer
         
-        switch answeredCorrect {
+        switch numCorrect {
         case ...0:
             return (title: "Ups! It was a quite hard game.",
                     message: "You haven't earned any points during this game. \nBut don't worry it will get better with practice.")
@@ -51,7 +53,7 @@ class Game {
     }
 
     // MARK: - Constants
-    static let numWordsInRound = 5
+    static let numTasksInRound = 5
     static let numOptionsForTask = 4
     static let pointsPerCorrectAnswer = 1
     

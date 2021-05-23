@@ -1,5 +1,5 @@
 //
-//  Badge.swift
+//  BadgeView.swift
 //  Synonymist
 //
 //  Created by Valerie 👩🏼‍💻 on 16/04/2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Badge: View {
+struct BadgeView: View {
     var image: String
     var earned: Bool
     
@@ -26,8 +26,8 @@ struct Badge: View {
     }
 }
 
-struct Badge_Previews: PreviewProvider {
+struct BadgeView_Previews: PreviewProvider {
     static var previews: some View {
-        Badge(image: "eyeglasses", earned: true)
+        BadgeView(image: "eyeglasses", earned: true)
     }
 }

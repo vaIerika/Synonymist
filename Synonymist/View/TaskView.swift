@@ -9,16 +9,13 @@ import SwiftUI
 
 struct TaskView: View {
     var taskWord: Word
+    var options: [String]
     var isCorrect: (Bool) -> Void
-    
-    private var options: [String] {
-        return Game().getRandomSynonyms(for: taskWord)
-    }
     
     var body: some View {
         VStack(spacing: 10) {
             TaskWordView(taskWord: taskWord)
-                .padding(.bottom, 25)
+                .padding(.bottom, 20)
             
             ForEach(options, id: \.self) { option in
                 OptionView(text: option, isCorrect: taskWord.synonyms.contains(option)) {
@@ -26,7 +23,8 @@ struct TaskView: View {
                 }
             }
         }
-        .padding(.bottom,30)
+        .padding(.top, 15)
+        .padding(.bottom, 30)
     }
 }
 
@@ -37,8 +35,8 @@ struct TaskView_Previews: PreviewProvider {
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
-            TaskView(taskWord: Game.exampleWord) { _ in
-                
+            TaskView(taskWord: Game.exampleWord, options: Game().getRandomSynonyms(for: Game.exampleWord)) { _ in
+
             }
         }
     }

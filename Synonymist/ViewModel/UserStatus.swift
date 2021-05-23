@@ -13,15 +13,22 @@ class UserStatus: ObservableObject, Codable {
     @Published var numWonRounds: Int
     @Published var recentMistakes: [Word]
     
-    func finishRound(isVictory: Bool, earnings: Int, mistakes: Word...) {
+    func finishGame(correctAnswers: Int, totalTasks: Int = Game.numTasksInRound, numPointsPerCorrectAnswer: Int = Game.pointsPerCorrectAnswer, mistakes: Set<Word>) {
+       
+        let earnings = correctAnswers * numPointsPerCorrectAnswer
         increase(.score, amount: earnings)
         increase(.numPlayedRounds)
-        if isVictory { increase(.numWonRounds) }
         
-        for mistake in mistakes {
-            addMistake(mistake)
+        if correctAnswers >= totalTasks {
+            increase(.numWonRounds)
         }
+        
+        mistakes.forEach { addMistake($0) }
+        print("Finish game with \(earnings), mistakes: \(mistakes.count)")
+
+        save()
     }
+    
     enum Status { case score, numPlayedRounds, numWonRounds }
 
     private func increase(_ status: Status, amount: Int = 1) {
@@ -31,14 +38,15 @@ class UserStatus: ObservableObject, Codable {
                 return score = UserStatus.maxScore
             }
             score += amount
+            print("Score \(score)")
             
         case .numPlayedRounds:
-            if numPlayedRounds < UserStatus.maxRounds {
+            if numPlayedRounds < UserStatus.maxPlayedRounds {
                 numPlayedRounds += 1
             }
             
         case .numWonRounds:
-            if numWonRounds < UserStatus.maxRounds {
+            if numWonRounds < UserStatus.maxPlayedRounds {
                 numWonRounds += 1
             }
         }
@@ -58,7 +66,7 @@ class UserStatus: ObservableObject, Codable {
     
     // MARK: - Constants
     static let maxScore = 9999
-    static let maxRounds = 999
+    static let maxPlayedRounds = 999
     
     // MARK: -  Initializers & Codable methods
     enum CodingKeys: CodingKey {
@@ -100,7 +108,7 @@ class UserStatus: ObservableObject, Codable {
     }
     
     private func save() {
-        if let encoded = try? JSONEncoder().encode(recentMistakes) {
+        if let encoded = try? JSONEncoder().encode(self) {
             UserDefaults.standard.set(encoded, forKey: Self.saveKey)
         }
     }

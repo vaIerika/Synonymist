@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF0D2C922448D371009913AB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C912448D371009913AB /* Question.swift */; };
-		AF0D2C942448D3C1009913AB /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* Badge.swift */; };
+		AF0D2C922448D371009913AB /* TasksBulletsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C912448D371009913AB /* TasksBulletsView.swift */; };
+		AF0D2C942448D3C1009913AB /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* BadgeView.swift */; };
 		AF21019D244B2C67004C0780 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */; };
 		AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */; };
 		AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */; };
@@ -29,13 +29,18 @@
 		B82C1765265955CF00FB9BCD /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C1764265955CF00FB9BCD /* OptionView.swift */; };
 		B82C17672659571300FB9BCD /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C17662659571300FB9BCD /* ScoreView.swift */; };
 		B82C176926595C9F00FB9BCD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C176826595C9F00FB9BCD /* GameView.swift */; };
+		B82C176B265A8C7700FB9BCD /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = B82C176A265A8C7700FB9BCD /* confetti.json */; };
+		B82C176E265A8CF500FB9BCD /* Lottie+ViewRepresentative.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C176D265A8CF500FB9BCD /* Lottie+ViewRepresentative.swift */; };
+		B82C1771265A8D7F00FB9BCD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B82C1770265A8D7F00FB9BCD /* Lottie */; };
+		B82C1773265AA67500FB9BCD /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C1772265AA67500FB9BCD /* Badge.swift */; };
+		B82C1775265AA93000FB9BCD /* badges.json in Resources */ = {isa = PBXBuildFile; fileRef = B82C1774265AA93000FB9BCD /* badges.json */; };
 		B8398C392656BA970020A267 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8398C382656BA970020A267 /* UserStatus.swift */; };
 		B8B7FE772657D2DC00FB1839 /* Font+MavenPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AF0D2C912448D371009913AB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		AF0D2C932448D3C1009913AB /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		AF0D2C912448D371009913AB /* TasksBulletsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksBulletsView.swift; sourceTree = "<group>"; };
+		AF0D2C932448D3C1009913AB /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AF40AC29244361CA00CE2B47 /* Synonymist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synonymist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +63,10 @@
 		B82C1764265955CF00FB9BCD /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		B82C17662659571300FB9BCD /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		B82C176826595C9F00FB9BCD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B82C176A265A8C7700FB9BCD /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		B82C176D265A8CF500FB9BCD /* Lottie+ViewRepresentative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lottie+ViewRepresentative.swift"; sourceTree = "<group>"; };
+		B82C1772265AA67500FB9BCD /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		B82C1774265AA93000FB9BCD /* badges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badges.json; sourceTree = "<group>"; };
 		B8398C382656BA970020A267 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+MavenPro.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82C1771265A8D7F00FB9BCD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +108,7 @@
 				AFD06C162445E40C00CA17A8 /* Model */,
 				AF899FD82444D22900495D68 /* View */,
 				AF64AB3D244734FE002A48AD /* Extensions */,
+				B82C176C265A8C7E00FB9BCD /* Animation */,
 				AF40AC32244361CE00CE2B47 /* Assets.xcassets */,
 				AF40AC37244361CE00CE2B47 /* LaunchScreen.storyboard */,
 				AF40AC3A244361CE00CE2B47 /* Info.plist */,
@@ -129,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */,
+				B82C176D265A8CF500FB9BCD /* Lottie+ViewRepresentative.swift */,
 				AF64AB3E24473513002A48AD /* GameColors.swift */,
 				AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */,
 			);
@@ -138,11 +150,11 @@
 		AF76237024780BA1006FC29D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B82C17662659571300FB9BCD /* ScoreView.swift */,
+				AF0D2C912448D371009913AB /* TasksBulletsView.swift */,
 				B82C1764265955CF00FB9BCD /* OptionView.swift */,
 				B82C17622659557F00FB9BCD /* TaskWordView.swift */,
-				AF0D2C932448D3C1009913AB /* Badge.swift */,
-				AF0D2C912448D371009913AB /* Question.swift */,
+				B82C17662659571300FB9BCD /* ScoreView.swift */,
+				AF0D2C932448D3C1009913AB /* BadgeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -163,10 +175,20 @@
 			isa = PBXGroup;
 			children = (
 				B82C175E2659346500FB9BCD /* Game.swift */,
+				B82C1772265AA67500FB9BCD /* Badge.swift */,
 				AFD06C172445E42D00CA17A8 /* Word.swift */,
+				B82C1774265AA93000FB9BCD /* badges.json */,
 				AF68E392244CA9E700E27A10 /* words.json */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B82C176C265A8C7E00FB9BCD /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				B82C176A265A8C7700FB9BCD /* confetti.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		B8398C372656BA890020A267 /* ViewModel */ = {
@@ -193,6 +215,9 @@
 			dependencies = (
 			);
 			name = Synonymist;
+			packageProductDependencies = (
+				B82C1770265A8D7F00FB9BCD /* Lottie */,
+			);
 			productName = Synonymist;
 			productReference = AF40AC29244361CA00CE2B47 /* Synonymist.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +245,9 @@
 				Base,
 			);
 			mainGroup = AF40AC20244361CA00CE2B47;
+			packageReferences = (
+				B82C176F265A8D7F00FB9BCD /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = AF40AC2A244361CA00CE2B47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,8 +267,10 @@
 				AF64AB3A2447303B002A48AD /* MavenPro-Black.ttf in Resources */,
 				AF64AB3B2447303F002A48AD /* MavenPro-SemiBold.ttf in Resources */,
 				AF40AC33244361CE00CE2B47 /* Assets.xcassets in Resources */,
+				B82C176B265A8C7700FB9BCD /* confetti.json in Resources */,
 				AF64AB3924473039002A48AD /* MavenPro-Bold.ttf in Resources */,
 				AF68E393244CA9E700E27A10 /* words.json in Resources */,
+				B82C1775265AA93000FB9BCD /* badges.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,21 +283,23 @@
 			files = (
 				AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */,
 				B82C17672659571300FB9BCD /* ScoreView.swift in Sources */,
-				AF0D2C942448D3C1009913AB /* Badge.swift in Sources */,
+				AF0D2C942448D3C1009913AB /* BadgeView.swift in Sources */,
 				AFD06C182445E42D00CA17A8 /* Word.swift in Sources */,
 				AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */,
 				B82C176926595C9F00FB9BCD /* GameView.swift in Sources */,
+				B82C176E265A8CF500FB9BCD /* Lottie+ViewRepresentative.swift in Sources */,
 				AF21019D244B2C67004C0780 /* Bundle+Decodable.swift in Sources */,
 				AF40AC31244361CA00CE2B47 /* ContentView.swift in Sources */,
 				AF64AB3F24473513002A48AD /* GameColors.swift in Sources */,
 				B8B7FE772657D2DC00FB1839 /* Font+MavenPro.swift in Sources */,
 				B82C175F2659346500FB9BCD /* Game.swift in Sources */,
-				AF0D2C922448D371009913AB /* Question.swift in Sources */,
+				AF0D2C922448D371009913AB /* TasksBulletsView.swift in Sources */,
 				B8398C392656BA970020A267 /* UserStatus.swift in Sources */,
 				B82C17632659557F00FB9BCD /* TaskWordView.swift in Sources */,
 				B82C175D26592EA800FB9BCD /* TaskView.swift in Sources */,
 				B82C1765265955CF00FB9BCD /* OptionView.swift in Sources */,
 				AF64AB4124477073002A48AD /* UserStatusView.swift in Sources */,
+				B82C1773265AA67500FB9BCD /* Badge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +442,7 @@
 				DEVELOPMENT_TEAM = 2DY52YYPUP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Synonymist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +463,7 @@
 				DEVELOPMENT_TEAM = 2DY52YYPUP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Synonymist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +497,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B82C176F265A8D7F00FB9BCD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B82C1770265A8D7F00FB9BCD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B82C176F265A8D7F00FB9BCD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF40AC21244361CA00CE2B47 /* Project object */;
 }

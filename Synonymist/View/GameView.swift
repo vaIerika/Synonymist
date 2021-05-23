@@ -8,58 +8,95 @@
 import SwiftUI
 
 struct GameView: View {
-    @ObservedObject var userStatus = UserStatus()
-    private let game = Game()
-    
-    let wordsForRound = Game().getWordsForRound()
+    let game: Game
+    var wordsForRound: [Word]
+    var sendGameResults: (Int, Set<Word>) -> Void
+
+    @State private var progress: [TaskBullet]
     @State private var currentTaskIndex: Int = 0
     @State private var correctAnswers: Int = 0
-    
+    @State private var mistakes: Set<Word> = []
+    @State private var randomSynonyms: [String] = []
+
     private var tasksInRound: Int {
-        Game().getWordsForRound().count
+       wordsForRound.count
     }
-    @State private var progress = Array(repeating: Question(), count: Game().getWordsForRound().count)
+    
+    init(game: Game, wordsForRound: [Word], sendGameResults: @escaping (Int, Set<Word>) -> Void) {
+        self.game = game
+        self.wordsForRound = wordsForRound
+        self.sendGameResults = sendGameResults
+        _progress = State(initialValue: Array(repeating: TaskBullet(), count: wordsForRound.count))
+    }
     
     var body: some View {
         VStack {
-            // TODO: - Create question view
-            Text("Question \(currentTaskIndex + 1) / \(tasksInRound)".uppercased())
-                .fontMavenPro(.footnote)
-            
-            HStack {
-                ForEach(progress, id: \.self) { question in
-                    question
-                }
+            TasksBulletsView(progress: progress, currentTaskIndex: currentTaskIndex)
+            TaskView(
+                taskWord: wordsForRound[currentTaskIndex],
+                //options: game.getRandomSynonyms(for: wordsForRound[currentTaskIndex])
+                options: randomSynonyms
+            ) { isCorrect in
+                receiveAnswer(isCorrect)
             }
-            .padding(.top, 8)
-            .padding(.bottom, 30)
-            
-        TaskView(taskWord: wordsForRound[currentTaskIndex]) { isCorrect in
-            isCorrect ? hapticsSuccess() : hapticsError()
-            nextQuestion()
+            Spacer()
         }
-        .padding(.bottom,30)
-        
+        .padding(.top, 25)
+        .onAppear {
+            if currentTaskIndex == 0 && !wordsForRound.isEmpty {
+                //randomSynonyms = game.getRandomSynonyms(for: wordsForRound[currentTaskIndex])
+                getRandomSynonyms(from: wordsForRound)
+            }
+        }
+        .onChange(of: wordsForRound) { newValue in
+            restartGame()
+            getRandomSynonyms(from: newValue)
+                //game.getRandomSynonyms(for: newValue[currentTaskIndex])
         }
     }
-
+    
+    private func getRandomSynonyms(from words: [Word]) {
+        randomSynonyms = game.getRandomSynonyms(for: words[currentTaskIndex])
+    }
+    
+    private func receiveAnswer(_ isCorrect: Bool) {
+        changeProgress(isCorrect: isCorrect)
+        if isCorrect {
+            hapticsSuccess()
+            correctAnswers += 1
+        } else {
+            hapticsError()
+            mistakes.insert(wordsForRound[currentTaskIndex])
+        }
+        nextQuestion()
+    }
+    
     private func nextQuestion() {
         guard currentTaskIndex < tasksInRound - 1 else { return finishGame() }
-        
         currentTaskIndex += 1
-        print("next question")
+        //randomSynonyms = game.getRandomSynonyms(for: wordsForRound[currentTaskIndex])
+        getRandomSynonyms(from: wordsForRound)
     }
     
     private func finishGame() {
-        // alert
-        // update viewmodel
-        print("alert")
-        /*
-         (alertTitle, alertMessage) = Game().getAlertTexts(answeredCorrect: correctQuestionsInGame)
-         showingAlert = true
-         */
+        sendGameResults(correctAnswers, mistakes)
+    }
+
+    private func changeProgress(isCorrect: Bool) {
+        guard currentTaskIndex < progress.count else { return }
+        withAnimation(.easeOut(duration: 0.3)) {
+            progress[currentTaskIndex].isCorrect = isCorrect
+        }
     }
     
+     private func restartGame() {
+        currentTaskIndex = 0
+        correctAnswers = 0
+        mistakes = []
+        progress = Array(repeating: TaskBullet(), count: tasksInRound)
+     }
+    
+    // MARK: - Haptics
     private func hapticsSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
@@ -69,34 +106,15 @@ struct GameView: View {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
     }
-    
-    
-    /*
-     func changeProgress() {
-         if userAnswer != nil {
-             if userAnswer == true {
-                 progress[questionNumber - 1].correct = true
-             } else {
-                 progress[questionNumber - 1].correct = false
-             }
-         }
-     }
-     func restartGame() {
-         countWonGames()
-         userStatus.numPlayedRounds += 1
-         questionNumber = 1
-         correctQuestionsInGame = 0
-         progress = Array(repeating: Question(correct: nil), count: Self.numberOfQuestions)
-         //randomiseWords()
-     }
-     */
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
-            .background(
-                Image("background")
-            )
+        GameView(game: Game(), wordsForRound: [Game.exampleWord]) { _, _ in
+            
+        }
+        .background(
+            Image("background")
+        )
     }
 }

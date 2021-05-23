@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Smarty Pants",
+		"info": "For a game without mistakes.",
+        "criterion": "victory",
+        "aim": 1
+	},
+    {
+		"name": "Know-It-All",
+		"info": "Get it for 20 rounds.",
+        "criterion": "rounds",
+        "aim": 20
+	},
+    {
+		"name": "Wise Guy",
+		"info": "If you earn 100-points.",
+        "criterion": "score",
+        "aim": 100
+	},
+    {
+		"name": "Senior Synonymist",
+		"info": "For 50 games with no mistake.",
+        "criterion": "victory",
+        "aim": 50
+	}
+]

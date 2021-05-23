@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct UserStatusView: View {
+    let badges = Rewards().badges
+    
     @State private var badgeTitle = ""
     @State private var badgeDescription = ""
     @State private var showingBadgeDescription = false
-
+    
     var score: Int
     var mistakes: [Word]
     var playedGames: Int
@@ -124,34 +126,41 @@ struct UserStatusView: View {
                     Text("BADGES")
                         .font(.custom("MavenPro-SemiBold", size: 21))
                         .padding(.bottom, 10)
+                    
+                    HStack {
+                        ForEach(badges, id: \.self) { badge in
+                            Text(badge.name)
+                        }
+                    }
+                    
                     HStack(spacing: 20) {
                         Button(action: {
                             self.badgeTitle = badgeDetails[0].title
                             self.badgeDescription = badgeDetails[0].info
                             self.showingBadgeDescription = true
                         }) {
-                            Badge(image: "eyeglasses", earned: badgeNoMistakes)
+                            BadgeView(image: "eyeglasses", earned: badgeNoMistakes)
                         }
                         Button(action: {
                             self.badgeTitle = badgeDetails[1].title
                             self.badgeDescription = badgeDetails[1].info
                             self.showingBadgeDescription = true
                         }) {
-                            Badge(image: "gamecontroller.fill", earned: badge20Games)
+                            BadgeView(image: "gamecontroller.fill", earned: badge20Games)
                         }
                         Button(action: {
                             self.badgeTitle = badgeDetails[2].title
                             self.badgeDescription = badgeDetails[2].info
                             self.showingBadgeDescription = true
                         }) {
-                            Badge(image: "star.fill", earned: badge100Points)
+                            BadgeView(image: "star.fill", earned: badge100Points)
                         }
                         Button(action: {
                             self.badgeTitle = badgeDetails[3].title
                             self.badgeDescription = badgeDetails[3].info
                             self.showingBadgeDescription = true
                         }) {
-                            Badge(image: "rosette", earned: badge50WonGames)
+                            BadgeView(image: "rosette", earned: badge50WonGames)
                         }
                     }
                     

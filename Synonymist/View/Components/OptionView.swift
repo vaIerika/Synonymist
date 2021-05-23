@@ -14,9 +14,10 @@ struct OptionView: View {
     
     @State private var animate = false
     @State private var scaleEffect = false
+   // @State private var fontScaleAnimation = false
     
     var body: some View {
-        Text(text)
+        Text(text.lowercased())
             .fontMavenPro(weight: .black)
             .padding()
             .background(
@@ -26,6 +27,14 @@ struct OptionView: View {
                     .opacity(animate ? 1 : 0.4)
             )
             .scaleEffect(scaleEffect ? 1.1 : 1)
+            .overlay(
+                ZStack {
+                    if animate && isCorrect {
+                        LottieViewRepresentative(loopMode: .playOnce)
+                            .frame(width: 200, height: 200)
+                    }
+                }
+            )
             .padding(10)
             .onTapGesture {
                 withAnimation(.spring()) {
@@ -34,8 +43,9 @@ struct OptionView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         scaleEffect = false
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                         action()
+                        animate = false 
                     }
                 }
             }

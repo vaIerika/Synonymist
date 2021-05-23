@@ -13,7 +13,7 @@ struct Word: Codable {
     var synonyms: [String]
 }
 
-extension Word: Equatable {
+extension Word: Equatable, Hashable {
     static func == (lhs: Word, rhs: Word) -> Bool {
         return lhs.word == rhs.word
     }
