@@ -26,21 +26,20 @@ struct ContentView: View {
     private var BackgroundImage: some View {
         Image("background")
             .resizable()
-            .scaledToFill()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.all)
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            BackgroundImage
-            
+        VStack {
             GameView(game: game, wordsForRound: wordsForRound) { correctAnswers, mistakes in
                 userStatus.finishGame(correctAnswers: correctAnswers, mistakes: mistakes)
                 showAlert(with: correctAnswers)
             }
             ScoreView(score: userStatus.score, showUserStatus: $showUserStatus)
         }
-        .edgesIgnoringSafeArea(.all)
-        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(BackgroundImage)
         .alert(isPresented: $showingAlert) {
             Alert(
                 title: Text(alertTitle),
@@ -51,7 +50,7 @@ struct ContentView: View {
             )
         }
         .sheet(isPresented: $showUserStatus) {
-            UserStatusView(score: userStatus.score, mistakes: userStatus.recentMistakes, playedGames: userStatus.numPlayedRounds, wonGames: userStatus.numWonRounds)
+            UserStatusView(userStatus: userStatus)
         }
     }
     

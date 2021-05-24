@@ -34,7 +34,6 @@ struct GameView: View {
             TasksBulletsView(progress: progress, currentTaskIndex: currentTaskIndex)
             TaskView(
                 taskWord: wordsForRound[currentTaskIndex],
-                //options: game.getRandomSynonyms(for: wordsForRound[currentTaskIndex])
                 options: randomSynonyms
             ) { isCorrect in
                 receiveAnswer(isCorrect)
@@ -44,14 +43,12 @@ struct GameView: View {
         .padding(.top, 25)
         .onAppear {
             if currentTaskIndex == 0 && !wordsForRound.isEmpty {
-                //randomSynonyms = game.getRandomSynonyms(for: wordsForRound[currentTaskIndex])
                 getRandomSynonyms(from: wordsForRound)
             }
         }
         .onChange(of: wordsForRound) { newValue in
             restartGame()
             getRandomSynonyms(from: newValue)
-                //game.getRandomSynonyms(for: newValue[currentTaskIndex])
         }
     }
     
@@ -74,7 +71,6 @@ struct GameView: View {
     private func nextQuestion() {
         guard currentTaskIndex < tasksInRound - 1 else { return finishGame() }
         currentTaskIndex += 1
-        //randomSynonyms = game.getRandomSynonyms(for: wordsForRound[currentTaskIndex])
         getRandomSynonyms(from: wordsForRound)
     }
     

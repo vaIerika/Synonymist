@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF0D2C922448D371009913AB /* TasksBulletsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C912448D371009913AB /* TasksBulletsView.swift */; };
-		AF0D2C942448D3C1009913AB /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* BadgeView.swift */; };
+		AF0D2C942448D3C1009913AB /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D2C932448D3C1009913AB /* BadgesView.swift */; };
 		AF21019D244B2C67004C0780 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */; };
 		AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */; };
 		AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40AC2E244361CA00CE2B47 /* SceneDelegate.swift */; };
@@ -35,12 +35,14 @@
 		B82C1773265AA67500FB9BCD /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C1772265AA67500FB9BCD /* Badge.swift */; };
 		B82C1775265AA93000FB9BCD /* badges.json in Resources */ = {isa = PBXBuildFile; fileRef = B82C1774265AA93000FB9BCD /* badges.json */; };
 		B8398C392656BA970020A267 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8398C382656BA970020A267 /* UserStatus.swift */; };
+		B842510E265BA925004B27A8 /* UserMistakesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842510D265BA925004B27A8 /* UserMistakesView.swift */; };
+		B8425110265C0751004B27A8 /* Text+TitleWithWaveViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842510F265C0751004B27A8 /* Text+TitleWithWaveViewModifier.swift */; };
 		B8B7FE772657D2DC00FB1839 /* Font+MavenPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF0D2C912448D371009913AB /* TasksBulletsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksBulletsView.swift; sourceTree = "<group>"; };
-		AF0D2C932448D3C1009913AB /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		AF0D2C932448D3C1009913AB /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		AF21019C244B2C67004C0780 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AF40AC29244361CA00CE2B47 /* Synonymist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synonymist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40AC2C244361CA00CE2B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		B82C1772265AA67500FB9BCD /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		B82C1774265AA93000FB9BCD /* badges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badges.json; sourceTree = "<group>"; };
 		B8398C382656BA970020A267 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		B842510D265BA925004B27A8 /* UserMistakesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMistakesView.swift; sourceTree = "<group>"; };
+		B842510F265C0751004B27A8 /* Text+TitleWithWaveViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+TitleWithWaveViewModifier.swift"; sourceTree = "<group>"; };
 		B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+MavenPro.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,7 @@
 		AF64AB3D244734FE002A48AD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B842510F265C0751004B27A8 /* Text+TitleWithWaveViewModifier.swift */,
 				B8B7FE762657D2DC00FB1839 /* Font+MavenPro.swift */,
 				B82C176D265A8CF500FB9BCD /* Lottie+ViewRepresentative.swift */,
 				AF64AB3E24473513002A48AD /* GameColors.swift */,
@@ -150,11 +155,13 @@
 		AF76237024780BA1006FC29D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AF0D2C932448D3C1009913AB /* BadgesView.swift */,
+				B842510D265BA925004B27A8 /* UserMistakesView.swift */,
+				B82C175C26592EA800FB9BCD /* TaskView.swift */,
+				B82C17662659571300FB9BCD /* ScoreView.swift */,
 				AF0D2C912448D371009913AB /* TasksBulletsView.swift */,
 				B82C1764265955CF00FB9BCD /* OptionView.swift */,
 				B82C17622659557F00FB9BCD /* TaskWordView.swift */,
-				B82C17662659571300FB9BCD /* ScoreView.swift */,
-				AF0D2C932448D3C1009913AB /* BadgeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -164,7 +171,6 @@
 			children = (
 				AF40AC30244361CA00CE2B47 /* ContentView.swift */,
 				B82C176826595C9F00FB9BCD /* GameView.swift */,
-				B82C175C26592EA800FB9BCD /* TaskView.swift */,
 				AF64AB4024477073002A48AD /* UserStatusView.swift */,
 				AF76237024780BA1006FC29D /* Components */,
 			);
@@ -283,7 +289,8 @@
 			files = (
 				AF40AC2D244361CA00CE2B47 /* AppDelegate.swift in Sources */,
 				B82C17672659571300FB9BCD /* ScoreView.swift in Sources */,
-				AF0D2C942448D3C1009913AB /* BadgeView.swift in Sources */,
+				AF0D2C942448D3C1009913AB /* BadgesView.swift in Sources */,
+				B8425110265C0751004B27A8 /* Text+TitleWithWaveViewModifier.swift in Sources */,
 				AFD06C182445E42D00CA17A8 /* Word.swift in Sources */,
 				AF40AC2F244361CA00CE2B47 /* SceneDelegate.swift in Sources */,
 				B82C176926595C9F00FB9BCD /* GameView.swift in Sources */,
@@ -297,6 +304,7 @@
 				B8398C392656BA970020A267 /* UserStatus.swift in Sources */,
 				B82C17632659557F00FB9BCD /* TaskWordView.swift in Sources */,
 				B82C175D26592EA800FB9BCD /* TaskView.swift in Sources */,
+				B842510E265BA925004B27A8 /* UserMistakesView.swift in Sources */,
 				B82C1765265955CF00FB9BCD /* OptionView.swift in Sources */,
 				AF64AB4124477073002A48AD /* UserStatusView.swift in Sources */,
 				B82C1773265AA67500FB9BCD /* Badge.swift in Sources */,

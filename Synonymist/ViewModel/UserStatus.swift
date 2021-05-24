@@ -19,7 +19,7 @@ class UserStatus: ObservableObject, Codable {
         increase(.score, amount: earnings)
         increase(.numPlayedRounds)
         
-        if correctAnswers >= totalTasks {
+        if correctAnswers >= totalTasks && mistakes.isEmpty {
             increase(.numWonRounds)
         }
         
@@ -58,7 +58,7 @@ class UserStatus: ObservableObject, Codable {
         }
         recentMistakes.insert(word, at: 0)
         
-        while recentMistakes.count > 5 {
+        while recentMistakes.count > UserStatus.maxRecentMistakes {
             recentMistakes.removeLast()
         }
         save()
@@ -67,6 +67,7 @@ class UserStatus: ObservableObject, Codable {
     // MARK: - Constants
     static let maxScore = 9999
     static let maxPlayedRounds = 999
+    static let maxRecentMistakes = 6
     
     // MARK: -  Initializers & Codable methods
     enum CodingKeys: CodingKey {

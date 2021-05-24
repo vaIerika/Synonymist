@@ -8,8 +8,7 @@
 import Foundation
 
 class Game {
-    //private(set)
-    let words: [Word] = Bundle.main.decode("words.json")
+    private let words: [Word] = Bundle.main.decode("words.json")
 
     func getWordsForRound(amount: Int = numTasksInRound) -> [Word] {
         guard amount > 0 else { return [] }
@@ -29,7 +28,6 @@ class Game {
         for word in wordsToGetSynonymsFrom {
             synonyms.append(word.synonyms.filter { !synonyms.contains($0) }.randomElement() ?? "Default")
         }
-        print("All: \(synonyms)")
         return synonyms.shuffled()
     }
     

@@ -14,7 +14,6 @@ struct OptionView: View {
     
     @State private var animate = false
     @State private var scaleEffect = false
-   // @State private var fontScaleAnimation = false
     
     var body: some View {
         Text(text.lowercased())

@@ -22,7 +22,7 @@ struct ScoreView: View {
                     .fontMavenPro(.footnote)
             }
             .foregroundColor(.ghostWhite)
-            .padding(.bottom, 70)
+            .padding(.bottom, 50)
         }
     }
 }
