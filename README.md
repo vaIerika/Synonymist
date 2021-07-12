@@ -5,12 +5,12 @@
 
 <br/>
 
-### Fuctionality of the App
-1. Allow to choose the most suitable synonyms in the game form.
-2. Collect and save user's results of the game.
-3. Show a hint for each question.
-4. Display recent mistakes made by user.
-5. Let user to earn badges during the game.
+### Functionality of the App
+1. Allows to choose the most suitable synonyms in the game form.
+2. Collects and save user results of the game.
+3. Shows a hint for each question.
+4. Displays recent mistakes made by user.
+5. Lets user to earn badges during the game.
 
 <br/>
 
@@ -29,10 +29,10 @@
 <br/>
 
 ### Features 
-- UserDefaults for reading and writing data
-- Decoding data from JSON-file 
-- Feedback for user's actions with haptics (UINotificationFeedbackGenerator) and animation
-- Gamification (badges, score, alerts)  
+- UserDefaults for reading and writing data.
+- Decoding data from JSON-file.
+- Feedback for user's actions with haptics (UINotificationFeedbackGenerator) and animation.
+- Gamification (badges, score, alerts).
 <br/>
 
 ### Communication
